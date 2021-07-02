@@ -25,7 +25,7 @@ Posts.init({
     user_id: {
         type: DataTypes.INTEGER,
         references: {
-            model: 'user',
+            model: 'users',
             key: 'id',
         },
     },
@@ -34,7 +34,7 @@ Posts.init({
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'project',
+    modelName: 'posts',
 });
 
 module.exports = Posts;
