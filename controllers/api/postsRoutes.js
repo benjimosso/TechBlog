@@ -15,10 +15,13 @@ router.post('/', withAuth, async(req, res) => {
     }
 });
 
-router.get('./', async(req, res) => {
+router.get('/', async(req, res) => {
     try {
         const postsData = await Posts.findAll({
-            include: [{ model: Users }]
+            include: [{
+                model: Users,
+                attributes: { exclude: ['password'] }
+            }]
         });
 
         const posts = postsData.map((posts) => posts.get({ plain: true }));
