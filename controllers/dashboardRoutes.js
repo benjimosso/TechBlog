@@ -1,7 +1,6 @@
 const router = require("express").Router();
-const { Posts } = require("../models/");
-const withAuth = require("../utils/auth");
-
+const { Posts } = require("../models");
+const withAuth = require('../utils/auth');
 router.get("/", withAuth, (req, res) => {
     Posts.findAll({
             where: {
@@ -21,3 +20,5 @@ router.get("/", withAuth, (req, res) => {
             res.redirect("login");
         });
 });
+
+module.exports = router;
