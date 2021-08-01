@@ -5,6 +5,9 @@ function logout() {
         })
         .then(function() {
             document.location.replace("/");
+            console.log("+++++++++++++++++++")
+            console.log("Hiting logout.")
+            console.log("+++++++++++++++++++")
         })
         .catch(err => console.log(err));
 }

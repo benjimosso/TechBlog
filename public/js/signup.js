@@ -13,6 +13,9 @@ const signupFormHandler = async function(event) {
         })
         .then(function() {
             document.location.replace("/dashboard");
+            console.log("++++++++++++++++++++++++")
+            console.log("User should be there.")
+            console.log("++++++++++++++++++++++++")
         })
         .catch(err => console.log(err));
 };

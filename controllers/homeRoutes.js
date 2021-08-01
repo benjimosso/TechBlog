@@ -10,6 +10,9 @@ router.get("/", (req, res) => {
             const posts = dbPostData.map((post) => post.get({ plain: true }));
 
             res.render("all-posts", { posts });
+            console.log("++++++++++++++++++++")
+            console.log("HOMEROUTE")
+            console.log("++++++++++++++++++++")
         })
         .catch((err) => {
             res.status(500).json(err);
@@ -20,7 +23,7 @@ router.get("/", (req, res) => {
 router.get("/post/:id", (req, res) => {
     Posts.findByPk(req.params.id, {
             include: [
-                User,
+                Users,
                 {
                     model: Comment,
                     include: [Users],
@@ -31,7 +34,7 @@ router.get("/post/:id", (req, res) => {
             if (dbPostData) {
                 const post = dbPostData.get({ plain: true });
 
-                res.render("single-post", { post });
+                res.render("singlepost", { post });
             } else {
                 res.status(404).end();
             }
@@ -43,6 +46,9 @@ router.get("/post/:id", (req, res) => {
 
 router.get("/login", (req, res) => {
     if (req.session.loggedIn) {
+        console.log("++++++++++++++++++++++++")
+        console.log("estas aca")
+        console.log("++++++++++++++++++++++++")
         res.redirect("/");
         return;
     }

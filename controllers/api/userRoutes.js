@@ -11,8 +11,8 @@ router.post("/", (req, res) => {
                 req.session.userId = dbUserData.id;
                 req.session.username = dbUserData.username;
                 req.session.loggedIn = true;
-
                 res.json(dbUserData);
+                console.log("USER WAS CREATED")
             });
         })
         .catch(err => {
@@ -43,8 +43,15 @@ router.post("/login", (req, res) => {
             req.session.userId = dbUserData.id;
             req.session.username = dbUserData.username;
             req.session.loggedIn = true;
+            console.log("++++++++++++++++++++++++++++++")
+            console.log(req.session.loggedIn)
+            console.log("++++++++++++++++++++++++++++++")
 
             res.json({ user: dbUserData, message: 'You are now logged in!' });
+            console.log("++++++++++++++++++++++++++++++")
+            console.log("ESTO DEBERIA SER EL LOGIN")
+            console.log(req.session.loggedIn)
+            console.log("++++++++++++++++++++++++++++++")
         });
     });
 });
