@@ -47,7 +47,7 @@ router.get("/post/:id", (req, res) => {
 router.get("/login", (req, res) => {
     if (req.session.loggedIn) {
         console.log("++++++++++++++++++++++++")
-        console.log("estas aca")
+        console.log("/login en Homeroutes. ")
         console.log("++++++++++++++++++++++++")
         res.redirect("/");
         return;

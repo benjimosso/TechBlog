@@ -12,8 +12,10 @@ var loginFormHandler = async function(event) {
             headers: { "Content-Type": "application/json" }
         })
         .then(function() {
+            console.log('login.js AFTER THIS LOG IT SHOULD REPLACE THE DASHBOARDLAYOUT')
+            console.log(document.location)
             document.location.replace("/dashboard");
-            console.log('ARE WE HITING THIS????')
+
         })
         .catch(err => console.log(err));
 };
