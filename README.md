@@ -16,7 +16,7 @@ Heroku Publication:
 https://techblogdaniel.herokuapp.com/
 
 Screenshot:
-![Screenshot](https://github.com/benjimosso/Note-Taker/blob/main/images/Screenshot.PNG)
+![Screenshot](https://github.com/benjimosso/Note-Taker/blob/main/public/images/Screenshot.PNG)
 
 ## Author
 Daniel Mosso
